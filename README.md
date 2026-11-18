@@ -1,40 +1,60 @@
-<!-- ══════════════════════════════════════════════════════════════════ -->
-<!--                    NASHID K  —  GO N GLOW FRONTEND                 -->
-<!-- ══════════════════════════════════════════════════════════════════ -->
+# Go N Glow — Salon Booking Frontend
 
-# 💈 Go N Glow Frontend — Next.js Booking Interface
+The Go N Glow frontend is a Next.js application for a salon-discovery and appointment-booking product. It includes account flows, OTP and password-recovery screens, salon discovery and a shared API client for the companion backend.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Next.js-14.x-black?style=flat-square&logo=nextdotjs" alt="Next.js" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/React-18.x-61DAFB?style=flat-square&logo=react" alt="React" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript" alt="TypeScript" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/TailwindCSS-3.x-38B2AC?style=flat-square&logo=tailwindcss" alt="Tailwind" />
-</p>
+## Current stack
 
-<p align="center">
-  <strong>Client interfaces for the salon discovery and scheduling application, built with React Server Components, search filtering, and responsive Tailwind UI layouts.</strong>
-</p>
+- Next.js 16.1
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Axios
+- React Hook Form and Zod
+- date-fns and Lucide React
 
----
+## Application areas
 
-## 📌 Project Overview
-Go N Glow Client handles search queries, filter actions (distance, categories, rating), and appointment confirmations via APIs.
+- Signup and sign-in
+- OTP verification
+- Forgot-password and change-password flows
+- Salon discovery and booking-oriented UI
+- Shared authentication context and API client
 
-### ✨ Features
-*   **Salon Discovery:** Clean layouts displaying location filters and service metrics.
-*   **Booking Flows:** Step-by-step calendar scheduler dashboard.
-*   **Responsive Styling:** Full mobile browser compatibility.
+## Run locally
 
----
+```bash
+git clone https://github.com/Nashid-k/go-n-glow-frontend.git
+cd go-n-glow-frontend
+npm install
+cp .env.example .env.local
+npm run dev
+```
 
-## ⚙️ Development Setup
-1. Clone:
-   ```bash
-   git clone https://github.com/Nashid-k/go-n-glow-frontend.git
-   cd go-n-glow-frontend
-   ```
-2. Install packages: `npm install`
-3. Boot the local server: `npm run dev`.
+Open [http://localhost:3000](http://localhost:3000).
+
+## Environment
+
+| Variable | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_API_URL` | Base URL of the backend API, including the `/api` prefix |
+
+Example:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000/api
+```
+
+This variable is public and is embedded in the browser bundle. Never put private credentials in a `NEXT_PUBLIC_*` variable.
+
+## Scripts
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start Next.js development server |
+| `npm run build` | Create a production build |
+| `npm start` | Serve the production build |
+| `npm run lint` | Run ESLint |
+
+## Related repository
+
+[Go N Glow backend](https://github.com/Nashid-k/go-n-glow-backend) contains the Express and TypeScript API for authentication, salons, services and bookings.
